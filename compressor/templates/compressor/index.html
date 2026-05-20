@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HajmKompressor - Barcha fayllarni siqish</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>OptiPress <span class="badge">PRO</span></h1>
+            <p>Fayllar hajmini sifatni yo'qotmasdan kamaytiring. Rasmlar, videolar, PDF va boshqalar.</p>
+        </header>
+
+        <main>
+            <div class="upload-card glass">
+                <div id="drop-zone" class="drop-zone">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    </div>
+                    <h2>Faylni bu yerga tashlang</h2>
+                    <p>yoki fayl tanlash uchun bosing</p>
+                    <input type="file" id="file-input" hidden>
+                </div>
+
+                <div id="progress-container" class="progress-container hidden">
+                    <div class="file-info">
+                        <span id="file-name" class="file-name">fayl_nomi.mp4</span>
+                        <span id="file-status" class="file-status">Siqilmoqda...</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress" class="progress"></div>
+                    </div>
+                </div>
+
+                <div id="result-container" class="result-container hidden">
+                    <div class="stats">
+                        <div class="stat-box">
+                            <span class="label">Original</span>
+                            <span id="orig-size" class="value">0 MB</span>
+                        </div>
+                        <div class="stat-box success">
+                            <span class="label">Siqilgan</span>
+                            <span id="comp-size" class="value">0 MB</span>
+                        </div>
+                        <div class="stat-box highlight">
+                            <span class="label">Tejaldi</span>
+                            <span id="savings" class="value">0%</span>
+                        </div>
+                    </div>
+                    <a id="download-btn" href="#" class="btn-primary" download>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Yuklab Olish
+                    </a>
+                    <button id="reset-btn" class="btn-secondary">Boshqa fayl siqish</button>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>HajmKompressor © 2026. Barcha huquqlar himoyalangan.</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
