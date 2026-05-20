@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadBtn = document.getElementById('download-btn');
     const resetBtn = document.getElementById('reset-btn');
 
+    if (!dropZone) return; // Exit if we are on the home page where there is no drop zone
+
     // Utility: Format bytes to human readable
     function formatBytes(bytes, decimals = 2) {
         if (!+bytes) return '0 Bytes';

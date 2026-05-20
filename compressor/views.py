@@ -8,8 +8,20 @@ import os
 import uuid
 from django.conf import settings
 
-def index(request):
+def home(request):
     return render(request, 'compressor/index.html')
+
+def image_compress(request):
+    context = {'type': 'image', 'title': 'Rasm Siqish', 'accept': 'image/*'}
+    return render(request, 'compressor/compress_page.html', context)
+
+def video_compress(request):
+    context = {'type': 'video', 'title': 'Video Siqish', 'accept': 'video/*'}
+    return render(request, 'compressor/compress_page.html', context)
+
+def file_compress(request):
+    context = {'type': 'file', 'title': 'Fayl Siqish', 'accept': '.pdf,.zip,.docx,.txt,.xlsx'}
+    return render(request, 'compressor/compress_page.html', context)
 
 @csrf_exempt
 def upload_file(request):
