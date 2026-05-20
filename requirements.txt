@@ -1,0 +1,8 @@
+asgiref==3.11.1
+Django==5.2.14
+ffmpeg-python==0.2.0
+future==1.0.0
+imageio-ffmpeg==0.6.0
+pillow==12.2.0
+PyPDF2==3.0.1
+sqlparse==0.5.5
